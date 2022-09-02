@@ -16,7 +16,8 @@ app.set("view engine", "hbs")
 app.use("/", router)
 
 
-app.listen(5000, () =>{
+
+app.listen(PORT, () =>{
   console.log("The server is running on port 5000");
 })
 =======
@@ -36,8 +37,11 @@ app.set("view engine", "hbs")
 
 app.use("/", router)
 
+let port = process.env.PORT;
+ if (port == null || port == "") {
+   port = 5000;
 
-app.listen(5000, () =>{
+app.listen(port, () =>{
   console.log("The server is running on port 5000");
 })
 >>>>>>> 7fb4ae336de4b3d23f028a24cfff356381010878
