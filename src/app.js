@@ -11,7 +11,7 @@ app.use(express.static("public"))
 app.set("views", "views")
 app.set("view engine", "hbs")
 
-app.use("/", router)
+app.use("/customer", router)
 
 let PORT = process.env.PORT;
  if (PORT == null || port == "") {
