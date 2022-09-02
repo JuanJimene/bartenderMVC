@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-const path = require("path")
 const express = require("express")
 const app = express();
 const router = require("./router")
@@ -15,33 +13,11 @@ app.set("view engine", "hbs")
 
 app.use("/", router)
 
-
+let PORT = process.env.PORT;
+ if (PORT == null || port == "") {
+   PORT = 5000;
+}
 
 app.listen(PORT, () =>{
   console.log("The server is running on port 5000");
 })
-=======
-const path = require("path")
-const express = require("express")
-const app = express();
-const router = require("./router")
-const mongo = require('mongodb');
-const Handlebars = require("handlebars");
-
-//configuration
-app.use(express.urlencoded({extended: false}))
-app.use(express.json())
-app.use(express.static("public"))
-app.set("views", "views")
-app.set("view engine", "hbs")
-
-app.use("/", router)
-
-let port = process.env.PORT;
- if (port == null || port == "") {
-   port = 5000;
-
-app.listen(port, () =>{
-  console.log("The server is running on port 5000");
-})
->>>>>>> 7fb4ae336de4b3d23f028a24cfff356381010878
